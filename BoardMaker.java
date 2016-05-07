@@ -6,12 +6,13 @@ import java.lang.*;
 class BoardMaker{
 
    private int[][] board = {{0,0,0},{0,0,0},{0,1,1}};
-
+private int sqrBrd;
    private int count;
 
 
 
-   BoardMaker(){ 
+   BoardMaker(int sqrBrdFetched){ 
+sqrBrd = sqrBrdFetched;
    }
    
    
@@ -19,7 +20,7 @@ class BoardMaker{
       count = 0;
       for(int y = i-1;y<i+2;y++){
          for(int x = a-1;x<a+2;x++){
-            if(x>-1 && y>-1 && x<3 && y<3){
+            if(x>-1 && y>-1 && x<sqrBrd && y<sqrBrd){
                if(board[y][x]==1){
                   count = count +1;
                }
